@@ -81,6 +81,8 @@ pub mod tests {
     use super::*;
     #[test]
     fn test_deserialize_current_weather() {
+        // Ensures that we can parse XML as expected.
+
         let input = r#"
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet href="latest_ob.xsl" type="text/xsl"?>
@@ -138,6 +140,8 @@ pub mod tests {
 
     #[test]
     fn test_deserialize_current_weather_missing_item() {
+        // Ensures that we can handle XML that's missing some of the keys we expect.
+
         let input = r#"
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet href="latest_ob.xsl" type="text/xsl"?>
