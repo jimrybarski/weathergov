@@ -6,7 +6,7 @@ description = "Library that downloads and parses weather information from US gov
 license = "MIT"
 repository = "https://github.com/jimrybarski/weathergov"
 readme = "README.md"
-keywords = ["weather"]
+keywords = ["weather", "NOAA", "NWS"]
 
 [dependencies]
 serde = "1.0.27"
