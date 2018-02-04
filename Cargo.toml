@@ -1,0 +1,14 @@
+[package]
+name = "weathergov"
+version = "0.0.1"
+authors = ["Jim Rybarski <jim@rybarski.com>"]
+
+[dependencies]
+serde = "1.0.27"
+serde_derive = "1.0.27"
+serde-xml-rs = { git = "https://github.com/RReverser/serde-xml-rs", commit = "551c78d155cac89815e28d0f36a87029a8bf2a62" }
+reqwest = "0.8.4"
+
+[lib]
+name = "weathergov"
+path = "src/lib.rs"
