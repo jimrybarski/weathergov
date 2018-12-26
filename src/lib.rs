@@ -7,7 +7,7 @@ pub mod api;
 
 pub fn get_current_observation(station: &str) -> Result<parse::CurrentObservation, WeatherGovError> {
     // Downloads and parses current weather data for a given location.
-    // Stations can be looked up at: http://w1.weather.gov/xml/current_obs/
+    // Stations can be looked up at: https://w1.weather.gov/xml/current_obs/
     let xml = api::current_observation(station)?;
     let current_observation = parse::parse_current_observation(&xml)?;
     Ok(current_observation)
