@@ -1,11 +1,11 @@
 extern crate serde;
-extern crate serde_xml_rs;
+extern crate serde_xml_any;
 
 
-pub fn parse_current_observation(s: &str) -> Result<CurrentObservation, serde_xml_rs::Error> {
+pub fn parse_current_observation(s: &str) -> Result<CurrentObservation, serde_xml_any::Error> {
     // Takes an XML-formatted string containing current weather information and casts it into a
     // well-defined struct.
-    serde_xml_rs::from_str(s)
+    serde_xml_any::from_str(s)
 }
 
 #[derive(Serialize, Deserialize)]
@@ -133,7 +133,7 @@ pub mod tests {
 	<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
 	<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
 </current_observation>"#;
-        let current: CurrentObservation = serde_xml_rs::from_str(input).unwrap();
+        let current: CurrentObservation = serde_xml_any::from_str(input).unwrap();
         assert_eq!(current.temp_c, Some(11.7));
         assert_eq!(current.weather, Some("Overcast".to_owned()));
     }
@@ -191,7 +191,7 @@ pub mod tests {
 	<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
 	<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
 </current_observation>"#;
-        let current: CurrentObservation = serde_xml_rs::from_str(input).unwrap();
+        let current: CurrentObservation = serde_xml_any::from_str(input).unwrap();
         assert_eq!(current.temp_c, Some(11.7));
         assert_eq!(current.weather, Some("Overcast".to_owned()));
         assert_eq!(current.windchill_c, None);

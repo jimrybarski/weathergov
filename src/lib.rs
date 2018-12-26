@@ -1,6 +1,6 @@
 #[macro_use] extern crate serde_derive;
 extern crate reqwest;
-extern crate serde_xml_rs;
+extern crate serde_xml_any;
 pub mod parse;
 pub mod api;
 
@@ -17,7 +17,7 @@ pub fn get_current_observation(station: &str) -> Result<parse::CurrentObservatio
 #[derive(Debug)]
 pub enum WeatherGovError {
     APIError(reqwest::Error),
-    ParseError(serde_xml_rs::Error)
+    ParseError(serde_xml_any::Error)
 }
 
 impl From<reqwest::Error> for WeatherGovError {
@@ -26,8 +26,8 @@ impl From<reqwest::Error> for WeatherGovError {
     }
 }
 
-impl From<serde_xml_rs::Error> for WeatherGovError {
-    fn from(err: serde_xml_rs::Error) -> WeatherGovError {
+impl From<serde_xml_any::Error> for WeatherGovError {
+    fn from(err: serde_xml_any::Error) -> WeatherGovError {
         WeatherGovError::ParseError(err)
     }
 }

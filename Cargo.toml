@@ -1,6 +1,6 @@
 [package]
 name = "weathergov"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Jim Rybarski <jim@rybarski.com>"]
 description = "Library that downloads and parses weather information from US government sources"
 license = "MIT"
@@ -11,5 +11,5 @@ keywords = ["weather", "NOAA", "NWS"]
 [dependencies]
 serde = "1.0.27"
 serde_derive = "1.0.27"
-serde-xml-rs = { git = "https://github.com/RReverser/serde-xml-rs", commit = "551c78d155cac89815e28d0f36a87029a8bf2a62" }
+serde-xml-any = "0.0.3" 
 reqwest = "0.9.5"
