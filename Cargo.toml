@@ -1,6 +1,6 @@
 [package]
 name = "weathergov"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Jim Rybarski <jim@rybarski.com>"]
 description = "Library that downloads and parses weather information from US government sources"
 license = "MIT"
